@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+
+</head>
+
+<body>
+    <div class='pt-4 pb-4' style="background-color:aliceblue ; height: 100%; width: 100%;">
+        <div class="mx-auto ps-5 pb-5 w-50 "
+            style="min-height:88vh ; border-radius:2%;  box-shadow: 30px; background-color: white;">
+            <div class="pt-5 pb-5 fw-bold fs-1 ">🌐DPETruly Inovations</div>
+            <h5>Welcome back 👋</h5>
+            <h1 class=" pb-5 fw-light fs-1">Sign in</h1>
+            <h6>Email</h6>
+            <input class="form-control w-75 my-2 " type="text" placeholder="Email" id="eMail"><br>
+            <h6>Password</h6>
+            <input class="form-control w-75 my-2 " type="text" placeholder="Password" id="passW"><br>
+            <button class="btn btn-primary w-75 my-2" onclick="signIn()">Continue</button>              
+            <div class="text-center pe-5">
+                <span>Don’t have an account? <a class="fw-bold" style="text-decoration:none ; color: black;" href="signUp.html">Sign Up</a></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let allUser = JSON.parse(localStorage.getItem("bankDetails"))
+
+        const signIn = () => {
+            let found = false
+            allUser.map((eachCustomer, index) => {
+                if (eMail.value == allUser[index].email && passW.value == allUser[index].password) {
+                    localStorage.setItem("currentCustInfo", index)
+
+                    found = true
+                    // window.location.href = "dashboard.html"
+                    window.location.href = "dashboard.html"
+                    return
+
+                }
+                // if (found == true){
+
+                // }
+                else {
+                    // alert('Incorrect')
+                    window.location.href = "signIn.html"
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

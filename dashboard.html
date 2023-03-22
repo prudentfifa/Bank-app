@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body id="body" class="bg-light" onload="showBalance()">
+    <div id="sect">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid mx-auto">
+                <a class="navbar-brand fw-bold fs-1 text-primary" href="#">🌐DPE Truly Inovations</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a onclick="dashBoard()" class="nav-link" href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cashpin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="window.location.href = 'transactionHistory.html'" class="nav-link"
+                                style="cursor: pointer;">Transactions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signIn.html">Logout <span><img
+                                        src="../images/svgexport-2.svg" alt=""></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="dashboard-wrapper" id="section1">
+            <main class="ms-5 col-2 " id="main1">
+                <div class="card mt-5" style="width: 14rem;" id="div1">
+
+                    <div class="card-body text-center col" id="div2">
+                        <button onclick="dashBoard()" class="btn btn-primary  col-11 w-100 mb-2">
+                            <h5 class="card-title mt-3"><span><img src="../images/svgexport-6.svg" alt=""></span>
+                                Dashboard
+                            </h5>
+                        </button>
+                        <button class="btn btn-info col-11 w-100 mb-2">
+                            <h5 class="card-title mt-3"><span><img src="../images/svgexport-7.svg" alt=""></span>
+                                Cashpin
+                            </h5>
+                        </button>
+                        <button class="btn btn-warning col-11 w-100 mb-2">
+                            <h5 onclick="window.location.href = 'transactionHistory.html'" class="card-title mt-3">
+                                <span><img src="../images/svgexport-8.svg" alt=""></span>
+                                Transactions</h5>
+                        </button>
+                        <button class="btn  btn-secondary col-11 w-100 mb-2">
+                            <h5 onclick="window.location.href = 'proFile.html'" class="card-title mt-3" onclick="proFile()"><span><img src="../images/svgexport-9.svg"
+                                        alt=""></span> Profile
+                            </h5>
+                        </button>
+                        <button class="btn btn-dark col-11 w-100 mb-2">
+                            <h5 class="card-title mt-3 "><span><img src="../images/svgexport-10.svg" alt=""></span>
+                                Referral
+                            </h5>
+                        </button>
+                    </div>
+                    <div class="mx-2 my-2" id="div3">
+                        <img style="border-radius: 10px;" src="../start now.png" class="card-img-top" alt="...">
+
+                    </div>
+                </div>
+            </main>
+            <main class="col-6 mt-5  " id="main2">
+                <section class="col" id="section2">
+                    <main class="col-12 d-lg-block d-sm-none" id="main3">
+                        <div class="d-flex " id="div4">
+                            <div class="card bg-white col-3  me-4" style="width: 15rem; height: 6rem; border: white;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary fw-bold  fs-6">Available Balance</h5>
+                                    <div class="text-dark fs-4" id="AvailableBalancelg"></div>
+                                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                           -->
+                                </div>
+                            </div>
+                            <div class="card  me-4 col-3 "
+                                style="width: 15rem; height: 6rem; background-color: aquamarine; border:pink;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary fw-bold  fs-6">Ledger Balance</h5>
+                                    <h6 class="text-secondary fs-4"></h6>
+                                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                           -->
+                                </div>
+                            </div>
+                            <div class="card me-4 col-3 "
+                                style="width: 15rem; height: 6rem; background-color: aqua; border: aqua;">
+                                <div class="card-body" style="color:rgb(95, 95, 247) ;">
+                                    <h5 class="card-title fw-bold  fs-6">Withdrawable Balance</h5>
+                                    <h6 class=" fs-4"></h6>
+                                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                           -->
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <div class="col-12 mt-5" id="div5">
+                        <div class="card" style="width: 48.2rem; height: 14rem; border: white;">
+                            <div class="card-body">
+                                <main class="d-flex pt-3" style="justify-content:space-between ;">
+                                    <h5 class="card-title">Transactions</h5>
+                                    <a href="#" class="card-link" style="text-decoration: none;">View All <span><img
+                                                src="../images/svgexport-18.svg" alt=""></span></a>
+                                </main>
+                                <h5 class="card-subtitle mt-4 text-dark text-center">Please complete your BVN
+                                    verification
+                                    to see your transactions.</h5>
+                                <main class="text-center mt-5">
+                                    <button class="btn btn-primary ">Add BVN</button>
+                                </main>
+                            </div>
+                            <div class="mt-5 bg-white">
+                                <div id="demo">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <main class="col-2 mt-5 ms-5" id="main4">
+                <div class="card bg-white" style="width: 18rem; min-height: 40vh;">
+                    <div class="card-body col">
+                        <div class="card col-11 bg-light " style="width: 16rem; border: white;">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <img src="../images/svgexport-17.svg" alt="">
+                                </div>
+                                <h6 class="card-title text-primary fs-6 fw-bold">Add your BVN</h6>
+                                <p class="card-text fs-6 fw-light">Click on the arrow to complete your BVN registration
+                                    to
+                                    have full access to all our services.</p>
+                                <a href="#" class="card-link fs-6 fw-bold" style="text-decoration: none;">Set your pin
+                                    now <span><img src="../images/svgexport-18.svg" alt=""></span></a>
+                            </div>
+                        </div>
+                        <div class="card col-11 bg-light mt-3 " style="width: 16rem; border: white;">
+                            <div class="card-body ">
+                                <div class="mb-3">
+                                    <img src="../images/svgexport-17.svg" alt="">
+                                </div>
+                                <div>
+                                    <h6 class="card-title text-primary fs-6 mb-3 fw-bold">Set your pin</h6>
+                                    <p class="card-text fs-6 fw-light mb-4">Set your transaction pin and start
+                                        performing
+                                        transactions.</p>
+                                    <a href="#" class="card-link fs-6 fw-bold" style="text-decoration: none;">Add your
+                                        BVN
+                                        now<span><img src="../images/svgexport-18.svg" alt=""></span></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card col-11 bg-white mt-3 " style="width: 16rem; border: white;">
+                            <h4 class="fs-5 mb-5">Quicklinks</h4>
+                            <div class="col ms-4 mb-4 ">
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    class="btn btn-secondary col-5 fs-6"><span><img src="../images/svgexport-11.svg"
+                                            alt=""></span><br>Send Money</button>
+                                <button data-bs-toggle="modal" data-bs-target="#depositModal"
+                                    class="btn btn-primary  col-5 fs-6"><span><img src="../images/svgexport-12.svg"
+                                            alt=""></span><br> Fund Wallet</button>
+                            </div>
+                            <div class="col ms-4 mb-4">
+                                <button data-bs-toggle="modal" data-bs-target="#cashpinModal"
+                                    class="btn btn-info p-3 col-5"><span><img src="../images/svgexport-13.svg"
+                                            alt=""></span>Cashpin</button>
+                                <button data-bs-toggle="modal" data-bs-target="#airtimeModal"
+                                    class="btn btn-warning p-3 col-5"><span><img src="../images/svgexport-14.svg"
+                                            alt=""></span>Airtime</button>
+                            </div>
+                            <div class="col ms-4 mb-4">
+                                <button data-bs-toggle="modal" data-bs-target="#paybills"
+                                    class="btn btn-dark pb-4 col-5"><span><img src="../images/svgexport-15.svg"
+                                            alt=""></span><br> pay Bill</button>
+                                <button data-bs-toggle="modal" data-bs-target="#airtimecash"
+                                    class="btn btn-light col-5"><span><img src="../images/svgexport-16.svg"
+                                            alt=""></span><br> Airtime to cash</button>
+                            </div>
+                            <div class="col ms-4 mb-4">
+                                <button class="btn btn-secondary pb-4 col-5">🌐<br> Buy Data</button>
+                                <button class="btn btn-info col-5 fs-6"><span><img src="../images/svgexport-17.svg"
+                                            alt=""></span> <br> Save money</button>
+                            </div>
+                            <div class="col ms-4 mb-4">
+                                <button class="btn btn-primary col-5"><span><img src="../images/svgexport-7.svg"
+                                            alt=""></span><br> Virtual Card</button>
+
+                            </div>
+
+                            <!-- <div class="card-body">
+                          <h6 class="card-title text-primary fs-6 fw-bold">Add your BVN</h6>
+                          <p class="card-text fs-6" >Click on the arrow to complete your BVN registration to have full access to all our services.</p>
+                          <a href="#" class="card-link fs-6 fw-bold" style="text-decoration: none;">Add your BVN now</a>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <section class="dashboard-wrapper-mobile" id="section1">
+            <main class="col-6 mt-5  " style="padding-left: 2vw;" id="main2">
+                <section class="col" id="section2">
+                    <main class="col-12 d-lg-block d-sm-none" style="width:100vw;" id="main3">
+                        <div class="d-flex " id="div4">
+                            <div class="card bg-white col-3  me-4" style="width: 90%; height: 6rem; border: white;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary fw-bold  fs-6">Available Balance</h5>
+                                    <label id="AvailableBalanceSm" class="text-dark fs-4"></label>
+                                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                           -->
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <div style="padding-top: 0.5em; width: 100vw;">
+                        <div class="card col-11 bg-white " style="width: 90%; border: white;">
+                            <div class="card-body" style=" display: flex;">
+                                <img src="../images/svgexport-17.svg" alt="">
+                                <div>
+                                    <h6 class="card-title text-primary fs-6 fw-bold">Add your BVN</h6>
+                                    <p class="card-text fs-6 fw-white" style="padding-inline: 0.35em;">Click on the
+                                        arrow to
+                                        complete your BVN registration to
+                                        have full access to all our services.</p>
+                                </div>
+                                <a href="#" class="card-link fs-6 fw-bold bvn-btn" style=" text-decoration: none;">
+                                    <span><img src="../images/svgexport-18.svg" alt=""></span></a>
+                            </div>
+                        </div>
+                        <div class="card col-11 bg-white mt-3 " style="width: 90%; border: white;">
+                            <div class="card-body" style=" display: flex;">
+                                <img src="../images/svgexport-17.svg" alt="">
+                                <div>
+                                    <h6 class="card-title text-primary fs-6 mb-3 fw-bold">Set your pin</h6>
+                                    <p class="card-text fs-6 fw-white mb-4">Set your transaction pin and start
+                                        performing
+                                        transactions.</p>
+                                </div>
+                                <a href="#" class="card-link fs-6 fw-bold bvn-btn" style=" text-decoration: none;">
+                                    <span><img src="../images/svgexport-18.svg" alt=""></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5" style="width: 100vw;" id="div5">
+                        <div class="card" style="width: 90%; height: 50%; border: white;">
+                            <div class="card-body">
+                                <main class="d-flex pt-3" style="justify-content:space-between ;">
+                                    <h5 class="card-title">Transactions</h5>
+                                    <a href="#" class="card-link" style="text-decoration: none;">View All</a>
+                                </main>
+                                <h5 class="card-subtitle mt-4 text-dark text-center">Please complete your BVN
+                                    verification
+                                    to see your transactions.</h5>
+                                <main class="text-center mt-5">
+                                    <button class="btn btn-primary ">Add BVN</button>
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 100vw; margin-top: 0.5em;">
+                        <h4 class="fs-5 mb-5" style="margin-left: 1.65em;">Quicklinks</h4>
+                        <div class="row ms-4 mb-4 Quicklinks-button">
+                            <button data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="btn btn-secondary col-5 fs-6"><span><img src="../images/svgexport-11.svg"
+                                        alt=""></span><br>Send Money</button>
+                            <button data-bs-toggle="modal" data-bs-target="#depositModal"
+                                class="btn btn-primary  col-5 fs-6"><span><img src="../images/svgexport-12.svg"
+                                        alt=""></span><br> Fund Wallet</button>
+                            <button data-bs-toggle="modal" data-bs-target="#cashpinModal"
+                                class="btn btn-info p-3 col-5"><span><img src="../images/svgexport-13.svg"
+                                        alt=""></span>Cashpin</button>
+                            <button data-bs-toggle="modal" data-bs-target="#airtimeModal"
+                                class="btn btn-warning p-3 col-5"><span><img src="../images/svgexport-14.svg"
+                                        alt=""></span>Airtime</button>
+                            <button data-bs-toggle="modal" data-bs-target="#paybills"
+                                class="btn btn-dark pb-4 col-5"><span><img src="../images/svgexport-15.svg"
+                                        alt=""></span><br> pay Bill</button>
+                            <button data-bs-toggle="modal" data-bs-target="#airtimecash"
+                                class="btn btn-light col-5"><span><img src="../images/svgexport-16.svg"
+                                        alt=""></span><br> Airtime to cash</button>
+                            <button class="btn btn-secondary pb-4 col-5">🌐<br> Buy Data</button>
+                            <button class="btn btn-info col-5 fs-6"><span><img src="../images/svgexport-17.svg"
+                                        alt=""></span> <br> Save money</button>
+                            <button class="btn btn-primary col-5"><span><img src="../images/svgexport-7.svg"
+                                        alt=""></span><br> Virtual Card</button>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        </section>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Enter Amount to Send</label>
+                            <input id="sendmoney" class="form-control"></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button onclick="sendMoney()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientDeposit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Deposit</label>
+                            <textarea class="form-control" id="depositMoney"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="deposit()">Deposit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="airtimeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientAirtime">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Buy airtime</label>
+                            <textarea class="form-control" id="airtimeInput"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="airtime()">Airtime</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="airtimecash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientAirtimetocash">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Airtime to Cash</label>
+                            <textarea class="form-control" id="airtimeCash"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="airtimetoCash()">Airtime to Cash</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="cashpinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientCashpin">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Cashpin</label>
+                            <textarea class="form-control" id="Cashpin"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="cashPin()">Cash
+                        Pin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="paybills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipientPaybill">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Pay Bills</label>
+                            <textarea class="form-control" id="Paybill"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="payBill()">Pay
+                        Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="sendIt()">run</button>
+    <script src="./bootstrap-5.2.2-dist/js/bootstrap.js"></script>
+    <script>
+        currentCustInfo = localStorage.getItem("currentCustInfo")
+        showBalance = () => {
+            AvailableBalanceSm.innerHTML = `#${allUser[currentCustInfo].balance}`
+            AvailableBalancelg.innerHTML = `#${allUser[currentCustInfo].balance}`
+        }
+
+        // userMoney.innerText += `im working`v 
+        let allUser = JSON.parse(localStorage.getItem("bankDetails"))
+        console.log(allUser)
+        allUser.map((each, index) => {
+            console.log(allUser[index].firstname)
+        })
+
+        
+
+        const sendMoney = () => {
+            // allUser.map((each, index) => {
+            allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) - Number(sendmoney.value)
+            localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            showBalance()
+            if(  recipientName.value==''|| sendmoney.value==''){
+
+            }else{
+                let mytransactionHistory = {
+                recipientName: recipientName.value,
+                amountSent: sendmoney.value,
+                
+            }
+            allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+            localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            }
+            // })
+        }
+
+        const deposit = () => {
+            // alert('izz')
+            allUser.map((each, index) => {
+                allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) + Number(depositMoney.value)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+                showBalance()
+                let mytransactionHistory = {
+                    recipientName: recipientDeposit.value,
+                    amountSent: depositMoney.value,
+                }
+                allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            })
+        }
+
+        const airtime = () => {
+
+            allUser.map((each, index) => {
+                allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) - Number(airtimeInput.value)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+                showBalance()
+                let mytransactionHistory = {
+                    recipientName: recipientAirtime.value,
+                    amountSent: airtimeInput.value,
+                }
+                allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            })
+        }
+        const airtimetoCash = () => {
+
+            allUser.map((each, index) => {
+                allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) + Number(airtimeInput.value)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+                showBalance()
+                let mytransactionHistory = {
+                    recipientName: recipientAirtimetocash.value,
+                    amountSent: airtimeCash.value,
+                }
+                allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            })
+        }
+
+        const cashPin = () => {
+            // alert('izz')
+            allUser.map((each, index) => {
+                allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) + Number(airtimeInput.value)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+                showBalance()
+                let mytransactionHistory = {
+                    recipientName: recipientCashpin.value,
+                    amountSent: cashpin.value,
+                }
+                allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            })
+        }
+
+        const payBill = () => {
+            // alert('izz')
+            allUser.map((each, index) => {
+                allUser[currentCustInfo].balance = Number(allUser[currentCustInfo].balance) + Number(airtimeInput.value)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+                showBalance()
+                let mytransactionHistory = {
+                    recipientName: recipientPaybill.value,
+                    amountSent: paybill.value,
+                }
+                allUser[currentCustInfo].transactionHistory.push(mytransactionHistory)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser));
+            })
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+<body style="background-color:aliceblue ;  width: 100%;" onload="transactionReceipt()">
+        <div class="container-fluid d-flex  justify-content-between py-2 px-3" >
+         <div class="d-flex mx-auto">
+               <div class="me-5 ">Narration</div>
+            <div class="ms-5 ">Amount</div>
+         </div>
+        </div>    
+    <div id="dispHistory" style="background-color:aliceblue ; height: 100%; width: 100%;" class="mt-1  d-flex flex-column gap-3">
+    </div>
+    
+    <div class="my-5" style="background-color:aliceblue ; height: 100%;" id="dispReceipt">
+        
+    </div>
+
+    <script>
+            currentCustInfo = localStorage.getItem("currentCustInfo")
+            allUser = JSON.parse(localStorage.getItem("bankDetails"))
+            eachUser = allUser[currentCustInfo].transactionHistory
+        transactionReceipt = () => {
+            
+            allUser = JSON.parse(localStorage.getItem("bankDetails"))
+            eachUser = allUser[currentCustInfo].transactionHistory
+            dispHistory.innerHTML = ""
+            eachUser.map((each, index)=>{
+                dispHistory.innerHTML += `
+            <div class="container-fluid bg-secondary text-white rounded shadow d-flex w-50 justify-content-between py-4 px-3" style="cursor: pointer" onclick="showReceipt(${index})">
+                <div>${eachUser[index].recipientName}</div>
+                <div>${eachUser[index].amountSent}</div>
+
+            </div>
+            `
+            })
+        }
+        
+
+        showReceipt = (eachReceiptDetails) => {
+            allUser = JSON.parse(localStorage.getItem("bankDetails"))
+            eachUser = allUser[currentCustInfo].transactionHistory
+            dispReceipt.innerHTML = ""
+            eachUser.map((each, index) => {
+                dispReceipt.innerHTML = `
+                
+                <div class='container-fluid bg-white w-50 rounded  mx-auto my-auto' style="min-height:50vh ;">
+                    <div class="pt-5 pb-5 fw-bold fs-1 " style="text-align:start ;">🌐 D P E</div>
+                    <div class='text-center mb-5 pt-3'><h3>Transaction Receipt</h3></div>
+                    <div  class="container justify-content-between  px-3">Receiver: ${allUser[currentCustInfo].firstname} ${allUser[currentCustInfo].lastname}</div><hr>
+                    <div  class="container justify-content-between  px-3">Sender: DPETruly Innovations</div><hr>
+                    <div class="container  justify-content-between px-3">
+                    Narration: ${eachUser[eachReceiptDetails].recipientName}</div><hr>
+                    <div class="container justify-content-between  px-3">
+                    Amount: #${eachUser[eachReceiptDetails].amountSent}</div><hr>
+                    <div  class="container justify-content-between  px-3">Receiver account number: ${allUser[currentCustInfo].accountNumber}</div><hr>
+                    <div  class="container justify-content-between  px-3">Receiver Phone number: ${allUser[currentCustInfo].phoneNumber}</div><hr>
+                    <div  class="container justify-content-between mb-3 px-3">Transaction Fees: #0</div><hr>
+                    <button class='btn btn-primary'><a style="text-decoration:none ; color:white;" href="dashboard.html">Close</a> </button>
+                </div>
+                `
+            })
+        }
+    </script>
+</body>
+</html>
+

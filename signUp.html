@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class='pt-4 pb-4' style="background-color:aliceblue ; height: 100%; width: 100%;">
+        <div class="mx-auto ps-5 pb-5 w-50 "
+            style="min-height:88vh ; border-radius:2%;  box-shadow: 30px; background-color: white;">
+            <div class="pt-5 pb-5 fw-bold fs-1 ">🌐DPETruly Inovations</div>
+            <h5>Welcome back 👋</h5>
+            <h1 class=" pb-5 fw-light fs-1">Sign Up</h1>
+            <input class="form-control w-75  mx-auto  my-2" type="text" placeholder="First Name" id="fName">
+            <input class="form-control w-75 my-2 mx-auto" type="text" placeholder="Last Name" id="lName">
+            <input class="form-control w-75  mx-auto my-2 " type="text" placeholder="Email" id="eMail">
+            <input class="form-control w-75  mx-auto my-2 " type="text" placeholder="Password" id="passW">
+            <input class="form-control w-75 my-2 mx-auto" type="tel" maxlength="11" placeholder="Phone Number" id="phoneNumber">
+            <input class="form-control w-75 my-2 mx-auto d-none" type="text" maxlength="0" placeholder="Account Number(FOR OFFICIAL USE ONLY)" id="accountNumber">
+            <input class="form-control w-75 my-2 mx-auto" type="tel" maxlength="4" placeholder="Pin" id="pin">
+            <input class="form-control w-75 my-2 mx-auto" type="city" placeholder="Address" id="address">
+            <input class="form-control w-75 my-2 mx-auto" type="date" placeholder="DOB" id="dob">
+            <input class="form-control w-75 my-2 mx-auto"  placeholder="Country" list="nationality">
+             <datalist id="nationality">
+                <option value="Afghanistan"></option>
+                <option value="Nigeria"></option>
+                <option value="France"></option>
+                <option value="Canadian"></option>
+                <option value="German"></option>
+                <option value="China"></option>
+                <option value="Belgium"></option>
+                <option value="Denmark"></option>
+                <option value="Japan"></option>
+                <option value="Greece"></option>
+                <option value="Russia"></option>
+                <option value="Poland"></option>
+                <option value="Isreal"></option>
+                <option value="Austria"></option>
+                <option value="Portugal"></option>
+                <option value="Chile"></option>
+                <option value="Czech Republic"></option>
+                <option value="Banglanesh"></option>
+                <option value="Saudi Arabia"></option>
+                <option value="Hondura"></option>
+                <option value="El Salvator"></option>
+                <option value="Albani"></option>
+                <option value="Ghana"></option>
+                <option value="South Africa"></option>
+                <option value="Cote de'voire"></option>
+                <option value="Togo"></option>
+                <option value="Morroco"></option>
+                <option value="Tunisia"></option>
+                <option value="Neitherland"></option>
+                <option value="Qatar"></option>
+                <option value="Iran"></option>
+                <option value="Iraq"></option>
+                <option value="Dubai"></option>
+                <option value="Benin Republic"></option>
+                <option value="United State of America"></option>
+                <option value="United Kingdom"></option>
+                <option value="Argentina"></option>
+                <option value="Chad"></option>
+                <option value="India"></option>
+                <option value="Pakinstan"></option>
+                </datalist>
+            <input class="form-control w-75 my-2 mx-auto d-none"  type="text" maxlength="0" placeholder="BVN (FOR OFFICIAL USE ONLY)" id="bvn">
+            <input class="form-control w-75 my-2 mx-auto" placeholder="Gender" list="gender">
+            <datalist id="gender">
+                <option value="Male"></option>
+                <option value="Female"></option>
+            </datalist>
+            <div class="mx-auto text-center ">
+                <button class="btn btn-primary w-50  " onclick="signUp()">Sign Up</button>
+            </div>
+            <div class="text-center mt-3 ">
+            
+                    <span>All have an</span> <a style="text-decoration: none; color: white;" href="signIn.html">Account <span><img src="./images/svgexport-18.svg" alt=""></span></a>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <section class="text-center container w-50 bg-primary ">
+        <input class="form-control w-75  my-2 mx-auto" style="background-image:linear-gradient(to right,#A9F1DF 50% );" type="text" placeholder="First Name" id="fName">
+        <input class="form-control w-75 my-2 mx-auto" type="text" placeholder="Last Name" id="lName">
+        <input class="form-control w-75 my-2 mx-auto" type="email" onclick="validateEmail()" placeholder="Email" id="eMail">
+        <input class="form-control w-75 my-2 mx-auto" type="password" placeholder="Password" id="passW">
+        <input class="form-control w-75 my-2 mx-auto" type="tel" maxlength="11" placeholder="Phone Number" id="phoneNumber">
+        <input class="form-control w-75 my-2 mx-auto" type="text" maxlength="0" placeholder="Account Number(FOR OFFICIAL USE ONLY)" id="accountNumber">
+        <input class="form-control w-75 my-2 mx-auto" type="tel" maxlength="4" placeholder="Pin" id="pin">
+        <input class="form-control w-75 my-2 mx-auto" type="city" placeholder="Address" id="address">
+        <input class="form-control w-75 my-2 mx-auto" type="date" placeholder="DOB" id="dob">
+        <input class="form-control w-75 my-2 mx-auto" placeholder="Country" list="nationality"> <datalist id="nationality">
+            <option value="Afghanistan"></option>
+            <option value="Nigeria"></option>
+            <option value="France"></option>
+            <option value="Canadian"></option>
+            <option value="German"></option>
+            <option value="China"></option>
+            <option value="Belgium"></option>
+            <option value="Denmark"></option>
+            <option value="Japan"></option>
+            <option value="Greece"></option>
+            <option value="Russia"></option>
+            <option value="Poland"></option>
+            <option value="Isreal"></option>
+            <option value="Austria"></option>
+            <option value="Portugal"></option>
+            <option value="Chile"></option>
+            <option value="Czech Republic"></option>
+            <option value="Banglanesh"></option>
+            <option value="Saudi Arabia"></option>
+            <option value="Hondura"></option>
+            <option value="El Salvator"></option>
+            <option value="Albani"></option>
+            <option value="Ghana"></option>
+            <option value="South Africa"></option>
+            <option value="Cote de'voire"></option>
+            <option value="Togo"></option>
+            <option value="Morroco"></option>
+            <option value="Tunisia"></option>
+            <option value="Neitherland"></option>
+            <option value="Qatar"></option>
+            <option value="Iran"></option>
+            <option value="Iraq"></option>
+            <option value="Dubai"></option>
+            <option value="Benin Republic"></option>
+            <option value="United State of America"></option>
+            <option value="United Kingdom"></option>
+            <option value="Argentina"></option>
+            <option value="Chad"></option>
+            <option value="India"></option>
+            <option value="Pakinstan"></option>
+            </datalist>
+        <input class="form-control w-75 my-2 mx-auto" type="text" maxlength="0" placeholder="BVN (FOR OFFICIAL USE ONLY)" id="bvn">
+        <input class="form-control w-75 my-2 mx-auto" placeholder="Gender" list="gender">
+        <datalist id="gender">
+            <option value="Male"></option>
+            <option value="Female"></option>
+        </datalist>
+        <button class="btn btn-success w-50 my-2 mt-5" onclick="signUp()">SIGN UP</button>
+        <div class="text-center mt-3 ">
+            <button class="btn btn-primary">
+                <span>All have an</span> <a style="text-decoration: none; color: white;" href="signIn.html">Account <span><img src="./images/svgexport-18.svg" alt=""></span></a>
+            </button>
+        </div>
+    </section> -->
+
+
+    <script>
+        const validateEmail=(email)=>{
+            var re = /^[\w]+(@)[\w]{5,}[.][a-z]{2,}[.]?[u]?[k]?$/
+            return re.test(string(email).toLowerCase())
+        }
+        let allUser = []
+        if (localStorage.bankDetails) {
+            let oldCustomer = JSON.parse(localStorage.getItem("bankDetails"))
+            allUser = oldCustomer
+            console.log(allUser)
+        }
+        const signUp = () => {
+            let BVN = `911${Math.round(Math.random() * 100000)}`
+            console.log(BVN)
+            let accountNumber = `211${Math.round(Math.random() * 10000000)}`
+            console.log(accountNumber)
+            let eachUser = {
+                firstname: fName.value,
+                lastname: lName.value,
+                email: eMail.value,
+                password: passW.value,
+                phoneNumber: phoneNumber.value,
+                accountNumber: accountNumber,
+                pin: pin.value,
+                address: address.value,
+                dob: dob.value,
+                gender: gender.value,
+                nationality: nationality.value,
+                BVN: BVN,
+                balance: 1000,
+                transactionHistory: []
+            }
+            if (fName.value == "" ||
+                lName.value == "" ||
+                eMail.value == "" ||
+                passW.value == "" ||
+                phoneNumber.value == "" ||
+                pin.value == "" ||
+                address.value == "" ||
+                dob.value == "" ||
+                gender.value == "" ||
+                nationality.value == ""
+            ) {
+                alert("Kindly fill in all your details")
+            } else {
+
+                allUser.push(eachUser)
+                localStorage.setItem("bankDetails", JSON.stringify(allUser))
+                window.location.href = "signIn.html"
+            }
+        }
+    </script>
+</body>
+
+</html>

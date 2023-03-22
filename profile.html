@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+
+<body style="background-color:aliceblue ; height: 100%;" onload="userProfile()">
+    <div class="my-5"  id="dispProfile">
+
+    </div>
+
+
+    <script>
+        userProfile=()=>{
+            currentCustInfo = localStorage.getItem("currentCustInfo")
+            allUser = JSON.parse(localStorage.getItem("bankDetails"))
+            // console.log(allUser)
+         dispProfile.innerHTML=''
+         dispProfile.innerHTML +=`
+         <div class='container-fluid bg-white w-50 rounded  mx-auto my-auto' style="min-height:50vh ;">
+                    <div class="pt-5 pb-2 fw-bold fs-1 " style="text-align:center ;">🌐</div>
+                    <div class='text-center mb-3 pt-3'><h2>User Profile</h2></div>
+                    <div  class="container text-center justify-content-between  px-3"><h2>Welcome ${allUser[currentCustInfo].firstname} ${allUser[currentCustInfo].lastname}</div><hr>
+                    <div  class="container justify-content-between  px-3">User Name: ${allUser[currentCustInfo].firstname} ${allUser[currentCustInfo].lastname}</div><hr>
+                    <div  class="container justify-content-between  px-3">Bank Name: DPETruly Innovations</div><hr>
+                    <div  class="container justify-content-between  px-3">User account number: ${allUser[currentCustInfo].accountNumber}</div><hr>
+                    <div  class="container justify-content-between  px-3">User Phone number: ${allUser[currentCustInfo].phoneNumber}</div><hr>
+                    <div  class="container justify-content-between  px-3">BVN: ${allUser[currentCustInfo].BVN}</div><hr>
+                    <div  class="container justify-content-between  px-3">User Balance: # ${allUser[currentCustInfo].balance}</div><hr>
+                    <button class='btn btn-primary  mb-5 ms-3'><a style="text-decoration:none ; color:white;" href="dashboard.html">Ok</a> </button>
+                </div>
+         `
+        }
+    </script>
+</body>
+
+</html>
